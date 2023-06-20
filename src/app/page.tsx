@@ -1,7 +1,8 @@
-import Link from "next/link"
+import Link from 'next/link';
 
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
+import { siteConfig } from '@/config/site';
+
+import { buttonVariants } from '@/components/ui/button';
 
 export default function IndexPage() {
   return (
@@ -12,8 +13,8 @@ export default function IndexPage() {
           built with Radix UI and Tailwind CSS.
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
+          Accessible and customizable components that you can copy and paste into your apps. Free.
+          Open Source. And Next.js 13 Ready.
         </p>
       </div>
       <div className="flex gap-4">
@@ -29,11 +30,11 @@ export default function IndexPage() {
           target="_blank"
           rel="noreferrer"
           href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline" })}
+          className={buttonVariants({ variant: 'outline' })}
         >
           GitHub
         </Link>
       </div>
     </section>
-  )
+  );
 }

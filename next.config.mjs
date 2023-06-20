@@ -2,8 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    appDir: true,
+    turbotrace: {
+      logLevel: 'error',
+    },
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
