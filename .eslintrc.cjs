@@ -4,14 +4,15 @@ const config = {
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.json',
+    project: true,
     tsconfigRootDir: __dirname,
     extraFileExtensions: ['.json'],
   },
   plugins: ['@typescript-eslint'],
   extends: [
     'next/core-web-vitals',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:unicorn/recommended',
     'plugin:typescript-sort-keys/recommended',
     'plugin:tailwindcss/recommended',
@@ -55,25 +56,14 @@ const config = {
         argsIgnorePattern: '^_',
       },
     ],
-    'unicorn/prevent-abbreviations': [
-      'warn',
-      {
-        checkFilenames: false,
-        replacements: {
-          // Disable because of @t3-oss/env
-          env: {
-            environment: false,
-          },
-        },
-      },
-    ],
+    'unicorn/prevent-abbreviations': 'off',
   },
   overrides: [
     {
       extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
       files: ['*.ts', '*.tsx'],
       parserOptions: {
-        project: './tsconfig.json',
+        project: true,
         tsconfigRootDir: __dirname,
       },
     },
